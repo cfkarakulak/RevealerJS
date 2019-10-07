@@ -1,0 +1,57 @@
+/*
+Project: CriteriaJS
+Author: Cemre Fatih Karakulak
+Repo: https://github.com/cfkarakulak/CriteriaJS
+Version: 1.0.4
+*/
+
+/*-----------------------------------------------------------------------------------*/
+/* #1.1 Customization
+/*-----------------------------------------------------------------------------------*/
+
+.container{
+  width: 500px;
+  margin:0 auto;
+  margin-top: 100px;
+  display: table;
+}
+
+body.reveal:before {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #00000050;
+}
+
+.cf:after{
+  content: '';
+  clear:both;
+  display: table;
+}
+
+.navigation{
+  position: relative;
+  z-index: 11;
+  background: white;
+  border-radius: 6px;
+
+  ul{
+    display: table;
+    margin:0 auto;
+
+    li{
+      float:left;
+
+      a{
+        padding:10px 20px;
+        display: block;
+      }
+    }
+  }
+}
