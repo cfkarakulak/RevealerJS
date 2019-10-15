@@ -16,7 +16,7 @@ export default class Revealer {
 
       if (!act[data.on]) {
         events.add({
-          element: '[data-reveal]',
+          element: '[data-reveal]:not(.void)',
           data: {
             config: data,
           },
@@ -29,7 +29,7 @@ export default class Revealer {
 
       if (data.off && !act[data.off]) {
         events.add({
-          element: '[data-reveal]',
+          element: '[data-reveal]:not(.void)',
           data: {
             config: data,
           },

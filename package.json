@@ -1,5 +1,5 @@
 {
-  "name": "revealerjs",
+  "name": "revealerjsx",
   "version": "1.0.0",
   "description": "Lay layable overlays over the lays easier.",
   "main": "Revealer/scripts/Revealer.js",
