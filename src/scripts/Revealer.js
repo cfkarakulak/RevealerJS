@@ -49,6 +49,12 @@ export default class Revealer {
       return false;
     }
 
+    if (args.config.wait) {
+      return setTimeout(() => {
+        $('body').addClass('reveal');
+      }, Number(args.config.wait));
+    }
+
     return $('body').addClass('reveal');
   }
 
@@ -65,7 +71,8 @@ export default class Revealer {
   static explode(config) {
     const on = config.includes('on:') ? config.match(/on:\((.*?)\)/)[1] : false;
     const off = config.includes('off:') ? config.match(/off:\((.*?)\)/)[1] : false;
+    const wait = config.includes('wait:') ? config.match(/wait:\((.*?)\)/)[1] : false;
 
-    return { on, off };
+    return { on, off, wait };
   }
 }
