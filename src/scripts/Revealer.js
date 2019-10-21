@@ -43,19 +43,19 @@ export default class Revealer {
   }
 
   reveal(event) {
-    const args = event.data;
+    const args = Revealer.explode($(this).data('reveal'));
 
-    if (args.config.on !== event.type) {
+    if (args.on !== event.type) {
       return false;
     }
 
-    if (args.config.wait) {
+    if (args.wait) {
       window.revealerJSTimer = setTimeout(() => {
         $('body').addClass('reveal');
-      }, Number(args.config.wait));
+      }, Number(args.wait));
     }
 
-    if (!args.config.wait) {
+    if (!args.wait) {
       $('body').addClass('reveal');
     }
 
@@ -63,9 +63,9 @@ export default class Revealer {
   }
 
   conceal(event) {
-    const args = event.data;
+    const args = Revealer.explode($(this).data('reveal'));
 
-    if (args.config.off !== event.type) {
+    if (args.off !== event.type) {
       return false;
     }
 
