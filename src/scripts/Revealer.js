@@ -50,12 +50,16 @@ export default class Revealer {
     }
 
     if (args.config.wait) {
-      return setTimeout(() => {
+      window.revealerJSTimer = setTimeout(() => {
         $('body').addClass('reveal');
       }, Number(args.config.wait));
     }
 
-    return $('body').addClass('reveal');
+    if (!args.config.wait) {
+      $('body').addClass('reveal');
+    }
+
+    return args;
   }
 
   conceal(event) {
@@ -64,6 +68,8 @@ export default class Revealer {
     if (args.config.off !== event.type) {
       return false;
     }
+
+    clearTimeout(window.revealerJSTimer);
 
     return $('body').removeClass('reveal');
   }
